@@ -167,9 +167,9 @@ export default function OnboardingPage() {
                         <Check className="w-3 h-3 text-primary-foreground" />
                       </div>
                     )}
-                    {option.icon && (
+                    {(option as any).icon && (
                       <div className={`mb-4 transition-colors ${isSelected ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>
-                        {option.icon}
+                        {(option as any).icon}
                       </div>
                     )}
                     <span className="font-semibold">{option.label}</span>
