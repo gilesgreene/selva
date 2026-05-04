@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--vs-bg);
+  --color-foreground: var(--vs-text);
+  
+  --color-primary: var(--vs-accent);
+  --color-primary-foreground: var(--vs-bg);
+  
+  --color-secondary: var(--vs-surface-2);
+  --color-secondary-foreground: var(--vs-text);
+  
+  --color-muted: var(--vs-surface-2);
+  --color-muted-foreground: var(--vs-text-muted);
+  
+  --color-accent: var(--vs-accent);
+  --color-accent-foreground: var(--vs-bg);
+  
+  --color-border: var(--vs-border);
+  --color-input: var(--vs-border);
+  --color-ring: var(--vs-accent);
+
+  --font-sans: var(--vs-font-sans);
+  --font-mono: var(--vs-font-mono);
+}
+
+@layer base {
+  :root {
+    /* ── Core Backgrounds ── */
+    --vs-bg:            #0B0F1A;
+    --vs-surface:       #0D1B2A;
+    --vs-surface-2:     #112236;
+    --vs-surface-3:     #1A2F45;
+
+    /* ── Primary Accent (Veda Green) ── */
+    --vs-accent:        #4EEBC0;
+    --vs-accent-dim:    #1ECFA0;
+    --vs-accent-dark:   #0A7B5C;
+    --vs-accent-glow:   rgba(78, 235, 192, 0.12);
+
+    /* ── Data Colors ── */
+    --vs-blue:          #5B8DEF;
+    --vs-amber:         #F5A623;
+    --vs-red:           #F06060;
+    --vs-purple:        #A78BFA;
+
+    /* ── Text ── */
+    --vs-text:          #E5E9F5;
+    --vs-text-muted:    #7B8FB7;
+    --vs-text-dim:      #3D5070;
+
+    /* ── Borders ── */
+    --vs-border:        rgba(78, 235, 192, 0.12);
+    --vs-border-strong: rgba(78, 235, 192, 0.25);
+    --vs-border-subtle: rgba(255, 255, 255, 0.06);
+
+    /* ── Typography ── */
+    --vs-font-sans:     'Sora', 'Helvetica Neue', sans-serif;
+    --vs-font-mono:     'DM Mono', 'Courier New', monospace;
+
+    /* ── Spacing Scale ── */
+    --vs-radius-sm:     6px;
+    --vs-radius-md:     10px;
+    --vs-radius-lg:     14px;
+    --vs-radius-xl:     20px;
+
+    /* Base mappings for Tailwind compatibility */
+    --background: var(--vs-bg);
+    --foreground: var(--vs-text);
+    --card: var(--vs-surface);
+    --card-foreground: var(--vs-text);
+    --popover: var(--vs-surface);
+    --popover-foreground: var(--vs-text);
+    --primary: var(--vs-accent);
+    --primary-foreground: var(--vs-bg);
+    --secondary: var(--vs-surface-2);
+    --secondary-foreground: var(--vs-text);
+    --muted: var(--vs-surface-2);
+    --muted-foreground: var(--vs-text-muted);
+    --accent: var(--vs-accent-glow);
+    --accent-foreground: var(--vs-accent);
+    --destructive: var(--vs-red);
+    --destructive-foreground: var(--vs-text);
+    --border: var(--vs-border);
+    --input: var(--vs-border);
+    --ring: var(--vs-accent);
+  }
+}
+
+@layer components {
+  .vs-btn-primary {
+    @apply bg-[var(--vs-accent-dim)] text-[var(--vs-bg)] font-sans font-semibold text-sm px-5 py-2.5 rounded-[var(--vs-radius-md)] cursor-pointer transition-all hover:bg-[var(--vs-accent)] active:scale-[0.98];
+  }
+
+  .vs-btn-ghost {
+    @apply bg-transparent text-[var(--vs-accent)] font-sans font-semibold text-sm px-5 py-2.5 rounded-[var(--vs-radius-md)] border border-[var(--vs-border-strong)] cursor-pointer transition-all hover:bg-[var(--vs-accent-glow)] hover:border-[var(--vs-accent)];
+  }
+
+  .vs-card {
+    @apply bg-[var(--vs-surface)] border border-[var(--vs-border)] rounded-[var(--vs-radius-lg)] p-5 transition-all hover:border-[var(--vs-border-strong)] hover:bg-[var(--vs-surface-2)];
+  }
+
+  .vs-score-badge {
+    @apply font-mono text-[11px] font-medium tracking-wider px-2 py-0.5 rounded-full bg-[var(--vs-accent-glow)] text-[var(--vs-accent)] border border-[var(--vs-border)];
+  }
+
+  .vs-tag-rising {
+    @apply font-mono text-[10px] px-2 py-0.5 rounded-full bg-[rgba(245,166,35,0.1)] text-[var(--vs-amber)] border border-[rgba(245,166,35,0.25)];
+  }
+
+  .vs-metric {
+    @apply bg-[var(--vs-surface)] border border-[var(--vs-border)] rounded-[var(--vs-radius-md)] p-4;
+  }
+
+  .vs-metric-label {
+    @apply font-mono text-[11px] tracking-widest uppercase text-[var(--vs-text-muted)] mb-1.5;
+  }
+
+  .vs-metric-value {
+    @apply font-sans font-bold text-3xl text-[var(--vs-text)] tracking-tight;
+  }
+}
+
+html, body {
+  @apply bg-background text-foreground antialiased;
+  font-family: var(--vs-font-sans);
+}
+
+* {
+  @apply border-border;
+}
