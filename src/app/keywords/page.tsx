@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Search, TrendingUp, ArrowUpRight, BarChart3, MessageCircle, ShoppingBag, Youtube, Shield, Zap, Info } from "lucide-react";
+import { Search, TrendingUp, ArrowUpRight, BarChart3, MessageCircle, ShoppingBag, Play, Shield, Zap, Info } from "lucide-react";
 import { 
   LineChart as ReChart, 
   Line, 
@@ -113,7 +113,7 @@ export default function KeywordExplorerPage() {
                   { label: "Google Rank", value: "High", icon: <TrendingUp className="text-blue-400" /> },
                   { label: "Reddit Velocity", value: "89/mo", icon: <MessageCircle className="text-orange-400" /> },
                   { label: "Etsy Listings", value: "450+", icon: <ShoppingBag className="text-emerald-400" /> },
-                  { label: "YT Saturation", value: "Low", icon: <Youtube className="text-red-500" /> },
+                  { label: "YT Saturation", value: "Low", icon: <Play className="text-red-500" /> },
                 ].map((stat, i) => (
                   <div key={i} className="p-6 rounded-2xl bg-card border border-border/50 text-center space-y-2">
                     <div className="flex justify-center mb-2">{stat.icon}</div>
