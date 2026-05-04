@@ -26,6 +26,7 @@ import {
   Tooltip, 
   ResponsiveContainer 
 } from 'recharts';
+import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { Product, TrendHistory } from "@/types";
 
